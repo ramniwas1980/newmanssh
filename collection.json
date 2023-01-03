@@ -1,0 +1,456 @@
+{
+	"info": {
+		"_postman_id": "c0c4c557-2d96-4735-91d1-223163b7eb51",
+		"name": "Go Rest",
+		"description": "go rest collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1479509"
+	},
+	"item": [
+		{
+			"name": "Getuser",
+			"item": [
+				{
+					"name": "Getuser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"active\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 900ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(900);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"url to be gorest\", function () {\r",
+									"    pm.expect(pm.environment.get(\"url\")).to.equal(\"https://gorest.co.in/\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"verify name\", function () {\r",
+									"   var jsonData =pm.response.json();\r",
+									"    pm.expect(jsonData.name).to.eql(\"Chaten Arora\");\r",
+									"});\r",
+									"\r",
+									"console.log(\"end\")\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}public/v2/users/11607",
+							"host": [
+								"{{url}}public"
+							],
+							"path": [
+								"v2",
+								"users",
+								"11607"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Getuser",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://gorest.co.in/public/v2/users/16",
+									"protocol": "https",
+									"host": [
+										"gorest",
+										"co",
+										"in"
+									],
+									"path": [
+										"public",
+										"v2",
+										"users",
+										"16"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 17 Dec 2022 19:27:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"044ba011252bafdca3f7059c55317b19\""
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "vary",
+									"value": "Origin"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-ratelimit-limit",
+									"value": "90"
+								},
+								{
+									"key": "x-ratelimit-remaining",
+									"value": "89"
+								},
+								{
+									"key": "x-ratelimit-reset",
+									"value": "1"
+								},
+								{
+									"key": "x-request-id",
+									"value": "a44b17ed-3e74-4c1b-a671-e39de79c86cd"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.051908"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=6QDFfn1O8%2Fl0iQ8LDmH2Wb4U1%2FApNUbXwFbOjeRlmYMVu6p8QnIeiD57te%2FlZUWfA7%2FgOYSJbDFJPbdPIuJEDvvSUWzibqjJ6hfSkwJe8pzfYaDWJFkHYR4sLgS3JuE%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "77b20f0c5b3a33a2-DEL"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 16,\n    \"name\": \"Bilva Guneta\",\n    \"email\": \"bilva_guneta@ebert-hudson.com\",\n    \"gender\": \"female\",\n    \"status\": \"active\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Createuser",
+			"item": [
+				{
+					"name": "Createuser",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var random=Math.random().toString(36).substring(2);\r",
+									"var emailadd = \"ram\"+random+\"@gmail.com\";\r",
+									"pm.environment.set(\"emailadd\", emailadd);\r",
+									"console.log(emailadd)"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"verify email\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.email).to.eql(pm.environment.get(\"emailadd\"));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"email\": \"{{emailadd}}\",\r\n    \r\n    \"name\": \"Chaten Arora\",\r\n    \"gender\": \"male\",\r\n    \"status\": \"active\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}public/v2/users",
+							"host": [
+								"{{url}}public"
+							],
+							"path": [
+								"v2",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Updateuser",
+			"item": [
+				{
+					"name": "Updateuser",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"email\": \"ram_uuummmggchaten@metz.io\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}public/v2/users/11607",
+							"host": [
+								"{{url}}public"
+							],
+							"path": [
+								"v2",
+								"users",
+								"11607"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Basic auth",
+			"item": [
+				{
+					"name": "Basic auth",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://the-internet.herokuapp.com/basic_auth",
+							"protocol": "https",
+							"host": [
+								"the-internet",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"basic_auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Coop",
+			"item": [
+				{
+					"name": "Coop Auth2",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://coop.apps.symfonycasts.com/token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "CoopToken",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "03a1f003879768098396d90ef32164ec",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "coopapi",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://coop.apps.symfonycasts.com/api/4129/chickens-feed",
+							"protocol": "http",
+							"host": [
+								"coop",
+								"apps",
+								"symfonycasts",
+								"com"
+							],
+							"path": [
+								"api",
+								"4129",
+								"chickens-feed"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DeleteUser",
+			"item": [
+				{
+					"name": "DeleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}public/v2/users/11607",
+							"host": [
+								"{{url}}public"
+							],
+							"path": [
+								"v2",
+								"users",
+								"11607"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "9a638b0fc95864269fdf9dc014a976ba44dcacd778be6db64e448a8346e0938c",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
